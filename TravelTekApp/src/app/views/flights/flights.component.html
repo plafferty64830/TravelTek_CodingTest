@@ -1,0 +1,32 @@
+<div class="row">
+
+    <div class="col-md-2 col-sm-2 col-lg-2"></div>
+    <div class="col-md-8 col-sm-8 col-lg-8">
+        <div style="padding:50px">
+            <div class="table">
+                <thead>
+                    <th>How many of the flights depart in the morning (before 12PM)?</th>
+                    <th>How many different flight numbers are on each day?</th>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            {{numMorn}}
+                        </td>
+                        <td>
+                            <ol>
+                                <li *ngFor="let destination of mostPopularDest">
+                                    {{destination}}
+                                </li>
+                            </ol>
+                        </td>
+                    </tr>
+                </tbody>
+            </div>
+            <ngx-datatable class="bootstrap" [limit]="10" [loadingIndicator]="loadingIndicator" [rows]="rows" [columns]="columns" [columnMode]="'force'" [headerHeight]="50" [footerHeight]="50" [rowHeight]="'auto'">
+            </ngx-datatable>
+        </div>
+    </div>
+    <div class="col-md-2 col-sm-2 col-lg-2"></div>
+
+</div>
